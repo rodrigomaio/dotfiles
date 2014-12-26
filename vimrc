@@ -49,5 +49,6 @@ command! -nargs=+ Grep execute 'silent grep! -I -r -n --exclude *.{json,pyc} . -
 :nmap <leader>g :Grep <c-r>=expand("<cword>")<cr><cr>
 
 " Wrap Git commit messages at 72 characters 
-autocmd Filetype gitcommit spell textwidth=72
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 
