@@ -1,12 +1,13 @@
-"
+" Current line highlight
 set cursorline
+"hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " Start searching when you type the first character
 set incsearch
-" Search Highlight
+" Search highlight
 set hlsearch
 
-" Syntax Highlight
+" Syntax highlight
 syntax enable
 
 " 4 spaces for indenting
@@ -35,7 +36,7 @@ set wildmode=longest,list,full
 set wildmenu
 
 " Mouse scroll/select
-"set mouse=a
+set mouse=a
 
 " BN
 "au BufNewFile,BufRead bconf.txt.* set filetype=cfg
@@ -46,4 +47,7 @@ au BufNewFile,BufRead *.pgsql set filetype=sql
 command! -nargs=+ Grep execute 'silent grep! -I -r -n --exclude *.{json,pyc} . -e <args>' | copen | execute 'silent /<args>'
 " shift-control-* Greps for the word under the cursor
 :nmap <leader>g :Grep <c-r>=expand("<cword>")<cr><cr>
+
+" Wrap Git commit messages at 72 characters 
+autocmd Filetype gitcommit spell textwidth=72
 
