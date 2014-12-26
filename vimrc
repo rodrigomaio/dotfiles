@@ -1,3 +1,11 @@
+"
+set cursorline
+
+" Start searching when you type the first character
+set incsearch
+" Search Highlight
+set hlsearch
+
 " Syntax Highlight
 syntax enable
 
@@ -19,19 +27,22 @@ set selectmode=mouse
 " Line Numbers
 set nu
 
+" Paste mode
+set paste
+
 " http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
 set wildmode=longest,list,full
 set wildmenu
 
 " Mouse scroll/select
-" set mouse=a
+"set mouse=a
 
-" Blocket Platform
-au BufNewFile,BufRead bconf.txt.* set filetype=cfg
-au BufNewFile,BufRead *.tmpl set filetype=html
+" BN
+"au BufNewFile,BufRead bconf.txt.* set filetype=cfg
+"au BufNewFile,BufRead *.tmpl set filetype=html
 au BufNewFile,BufRead *.pgsql set filetype=sql
 
-" opens search results in a window w/ links and highlight the matches
+" Opens search results in a window w/ links and highlight the matches
 command! -nargs=+ Grep execute 'silent grep! -I -r -n --exclude *.{json,pyc} . -e <args>' | copen | execute 'silent /<args>'
 " shift-control-* Greps for the word under the cursor
 :nmap <leader>g :Grep <c-r>=expand("<cword>")<cr><cr>
