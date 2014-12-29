@@ -25,7 +25,7 @@
     # credit: http://bit.ly/10MMsoF
     snapshot = !git stash save -u "snapshot: $(date)" && git stash apply "stash@{0}"
 
-    lg = log --pretty=format:\"%Cred%h%Creset%C(bold)%x09%aN%Creset%x09%C(cyan)%ad (%cr)%Creset%x09%C(bold green)%s%Creset\" --date=iso
+    lg = lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lt = log --graph --oneline --all
 
 [apply]
