@@ -51,4 +51,11 @@ command! -nargs=+ Grep execute 'silent grep! -I -r -n --exclude *.{json,pyc} . -
 " Wrap Git commit messages at 72 characters 
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+" End-of-Line whitespace highlight
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+highlight EOLWS ctermbg=red guibg=red
 
+" Make Vim show ALL white spaces as a character
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"set list
