@@ -1,0 +1,20 @@
+" MyConf
+
+NeoBundle 'ervandew/supertab'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'jistr/vim-nerdtree-tabs'
+
+" Makendent plugin on Vim show ALL white spaces as a character
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+" Current line highlight
+set cursorline
+
+" Always  set auto indenting on
+set autoindent
+
+" End-of-Line whitespace highlight
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+highlight EOLWS ctermbg=red guibg=red
+
