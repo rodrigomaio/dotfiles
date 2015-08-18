@@ -1,18 +1,15 @@
 [user]
-	name = Rodrigo Souza
-	email = rodrigomaio@gmail.com
+	name =
+	email =
 
 [alias]
     go = checkout -B
     s  = status -s
     pl = pull --rebase
     st = status
-    rb = rebase
     ci = commit
-    cl = clone
     co = checkout
-    br = branch
-    ls = ls-tree --full-tree -r HEAD
+	sdiff = diff --cached
 
     tags     = tag -l
     branches = branch -a
