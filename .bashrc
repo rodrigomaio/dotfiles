@@ -10,6 +10,7 @@ LBLUE='\[\033[01;34m\]'
 DGRAY='\[\033[01;30m\]'
 LGRAY='\[\033[00;37m\]'
 RED='\[\033[01;31m\]'
+GIT_PS1_SHOWDIRTYSTATE=true
 PS1="$ ${DGRAY}\h|${R}${LGRAY}\u${R} ${LBLUE}\W${R}\$(__git_ps1 \"${RED} (%s)${R}\"): "
 
 # SSH Filesystem
